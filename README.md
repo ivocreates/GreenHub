@@ -1,26 +1,24 @@
-# **GreenHub - Green Technology Website**
+## GreenHub - Green Technology Website
 
-## **Overview**
+### Overview
 
-**GreenHub** is a modern, eco-friendly website dedicated to promoting green technology, sustainability, and community involvement. It provides information about sustainable products, community forums, and local events. The website incorporates elegant design principles, utilizing green tones to align with the theme of environmental consciousness.
-
-This website is built with clean, responsive HTML/CSS, and aims to offer a user-friendly interface across all devices. The project also incorporates social media links for broader engagement and is designed to have a minimal environmental footprint with efficient code.
+GreenHub is an eco-friendly website promoting green technology, sustainability, and community involvement. It features information about sustainable products, community forums, and local events. The design is elegant and eco-conscious, with green tones that emphasize environmental responsibility.
 
 ---
 
-## **Features**
+## Features
 
-- **Responsive Design**: Optimized for desktop, tablets, and mobile devices.
-- **Green Technology Theme**: Stylish, eco-friendly color scheme with green tones.
-- **Interactive Components**: Hover effects and interactive UI elements such as buttons and links.
-- **Social Media Links**: Includes links to GitHub, LinkedIn, Instagram, and WhatsApp for better engagement.
-- **Go-to-Top Button**: Fixed, interactive button to scroll back to the top of the page.
-- **Sustainable Product Display**: Showcase of sustainable products and eco-friendly practices.
-- **Community Forums**: An interactive section for users to engage in discussions.
+- **Responsive Design**: Optimized for desktop, tablet, and mobile views.
+- **Green Technology Theme**: Stylish design with eco-friendly green color schemes.
+- **Interactive Components**: Hover effects, buttons, and links.
+- **Social Media Links**: Links to GitHub, LinkedIn, Instagram, and WhatsApp.
+- **Go-to-Top Button**: A fixed button to scroll back to the top.
+- **Sustainable Product Display**: Showcase of eco-friendly products and practices.
+- **Community Forums**: Engage with other users in discussions and local events.
 
 ---
 
-## **Author Information**
+## Author Information
 
 - **Name**: Ivo Pereira
 - **GitHub**: [perivo](https://github.com/perivo)
@@ -30,115 +28,127 @@ This website is built with clean, responsive HTML/CSS, and aims to offer a user-
 
 ---
 
-## **Project Structure**
+## How to Set Up
 
-The project consists of the following directory structure:
+### 1. Download the Project
 
-```
-GreenHub/
-│
-├── index.html               # Homepage (main landing page)
-├── about.html               # About page (information about the project)
-├── products.html            # Sustainable products page
-├── community.html           # Community forums and events
-├── resources.html           # Resources page (eco-friendly resources)
-│
-├── css/                     # Contains all CSS files
-│   └── styles.css           # Main stylesheet for layout and design
-│
-├── images/                  # Directory for images used across the site
-│   ├── logo.png             # Website logo
-│   ├── hero.jpg             # Hero section background image
-│   ├── product-1.jpg        # Product image 1
-│   ├── product-2.jpg        # Product image 2
-│   ├── community-event.jpg  # Community event image
-│   └── placeholder.jpg      # Placeholder image
-│
-├── js/                      # JavaScript files for interactivity
-│   └── script.js            # Main JavaScript file for future functionalities
-│
-├── php/                     # PHP files for session management and server-side logic
-│   └── session_manager.php  # Session management for login/logout and user sessions
-│
-├── fonts/                   # Custom fonts (if any)
-│   └── OpenSans-Regular.ttf # Example font file
-│
-├── videos/                  # Video files (if any)
-│   └── intro.mp4            # Example intro video
-│
-└── README.md                # Project documentation
-```
-
----
-
-## **Requirements**
-
-- **Web Browser**: Any modern browser (Chrome, Firefox, Safari, Edge).
-- **Text Editor**: VS Code, Sublime Text, or any text editor of your choice.
-- **No server-side setup is required**: The website is a static site that works directly from the file system.
-
----
-
-## **How to Set Up**
-
-### **1. Download the Project**
-
-You can either clone the repository if it's hosted on GitHub or download the files directly.
+You can clone the repository or download the files:
 
 #### Clone with Git:
 ```bash
 git clone https://github.com/perivo/GreenHub.git
 ```
 
-#### Download the files:
-- Go to the repository page.
-- Click the **Download ZIP** button.
-- Extract the contents to your desired directory.
+#### Download ZIP:
+- Go to the repository page and click the **Download ZIP** button.
 
-### **2. Open the Project**
+### 2. Open the Project
 
 - Navigate to the folder where you downloaded or cloned the project.
-- Open the **index.html** file in your preferred browser.
+- Open the **index.html** file in your browser.
 
-### **3. Customizing the Site**
+### 3. Customizing the Site
 
-To customize the website:
+To modify the website:
 
-1. **Update Content**: Edit the `index.html` or other HTML files with new content. This could include:
-   - Updating the social media links in the footer.
-   - Adding or removing sections in the main content.
+1. **Update Content**: Edit the HTML files, including `index.html`, `about.html`, `community.html`, etc.
+2. **Modify Styles**: Change colors, typography, or layout by adjusting the `css/styles.css` file.
+3. **Add Images**: Replace existing images in the `images/` folder with your own.
+4. **Responsive Design**: Test on different screen sizes, and tweak the CSS as needed.
 
-2. **Modify Styles**: Open the `css/styles.css` file and adjust the color scheme, layout, or typography. The key green color palette can be found in the CSS under `#4CAF50`, `#388e3c`, etc.
+### 4. (Optional) Setting Up on XAMPP
 
-3. **Add Images**: Replace images in the `images/` folder with your own, ensuring they are correctly named (e.g., `hero.jpg`, `logo.png`).
+For a local server setup with XAMPP:
 
-4. **Responsive Design**: Ensure the website's layout looks good on different screen sizes by testing it on various devices. The current layout is responsive but you can tweak media queries in the CSS if needed.
-
----
-
-## **Usage**
-
-Once the website is set up, you can use it to:
-
-- Learn about green technology and sustainable practices.
-- Explore the community section to participate in forums or check out local events.
-- Browse sustainable products and learn about eco-friendly alternatives.
-- Visit social media links for updates and discussions.
+1. Install **XAMPP** and start **Apache** and **MySQL**.
+2. Create a folder under `htdocs` (e.g., `GreenHub`) and copy your project files there.
+3. If your project uses PHP, configure the database in **phpMyAdmin**.
+4. Access your site via `http://localhost/GreenHub/` or set up a virtual host for a cleaner URL.
 
 ---
 
-## **Technologies Used**
+## Technologies Used
 
-- **HTML5**: For creating the structure of the website.
+- **HTML5**: For structure and content.
 - **CSS3**: For styling and responsiveness.
-- **JavaScript** (optional): For any additional interactivity (currently minimal).
-- **Font Awesome**: For icons like the go-to-top button and social media links.
+- **JavaScript** (optional): For interactivity (currently minimal).
+- **PHP**: For server-side functionality like form submissions and user login.
+- **Font Awesome**: For icons and social media buttons.
 
 ---
 
-## **Social Media Links**
+## Project Structure
 
-You can customize the social media links in the footer with your own or use these:
+The project consists of the following directory structure:
+
+```
+GreenHub/
+│
+├── /css
+│   └── styles.css                  # Main CSS file for styling the website
+│
+├── /images
+│   ├── conserve-energy.jpg
+│   ├── eco-home-goods.jpg
+│   ├── eco-kitchenware.jpg
+│   ├── green-personal-care.jpg
+│   ├── hydropower.jpg
+│   ├── recycling.jpg
+│   ├── reduce-reuse-recycle.jpg
+│   ├── save-water.jpg
+│   ├── solar-energy.jpg
+│   ├── support-local-organic.jpg
+│   ├── sustainable-fashion.jpg
+│   ├── sustainable-products.jpg
+│   └── wind-energy.jpg
+│
+├── /js
+│   └── script.js                   # JavaScript file for website interactivity
+│
+├── /uploads
+│   └── (Uploaded images go here)   # Folder for user-uploaded files (e.g., profile pictures)
+│
+├── /php
+│   ├── submit_form.php             # Handles the form submissions
+│   ├── login.php                   # User login page
+│   ├── signup.php                  # User signup page
+│   ├── profile.php                 # User profile page (view and update user profile)
+│   ├── edit-profile.php            # PHP logic to edit and save profile updates
+│   ├── change-password.php         # Allows users to change their password
+│   └── database.php                # Contains the database connection logic
+│
+├── /templates
+│   ├── header.php                  # Reusable header template
+│   └── footer.php                  # Reusable footer template
+│
+├── /forum
+│   ├── forum.php                   # Displays forum discussions
+│   ├── post.php                    # Displays individual posts and replies
+│   └── submit-post.php             # Handles the submission of new posts
+│
+├── /db
+│   └── migrate.sql                 # SQL script to create necessary database tables
+│
+├── /pages
+│   ├── article1.html               # Article 1 page
+│   ├── article2.html               # Article 2 page
+│   ├── community.html              # Community page
+│   ├── contact.html                # Contact page
+│   ├── eco-tips.html               # Eco tips page
+│   ├── forum.html                  # Forum home page
+│   ├── renewable-energy.html       # Renewable energy page
+│   ├── resources.html              # Resources page
+│   ├── sustainable-products.html   # Sustainable products page
+│   └── index.html                  # Home page
+│
+└── README.md                       # Project documentation
+```
+
+
+---
+
+
+## Social Media Links
 
 - **GitHub**: [perivo](https://github.com/perivo)
 - **LinkedIn**: [Ivo Pereira](https://in.linkedin.com/in/ivo-pereira-ix3)
@@ -147,15 +157,10 @@ You can customize the social media links in the footer with your own or use thes
 
 ---
 
-## **License**
+## License
 
-This project is open-source and free to use under the **MIT License**.
-
----
-
-## **Acknowledgments**
-
-- **Font Awesome**: For providing stylish icons.
-- **GreenHub Community**: For inspiring eco-friendly design and sustainability efforts.
+This project is open-source under the **MIT License**.
 
 ---
+
+Let me know if you'd like any further changes!
