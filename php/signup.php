@@ -1,18 +1,28 @@
 <?php
+session_start();
 include 'database.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Process your signup form data here
+    // Assuming the signup process is successful, redirect to login.php
+
+    // Example of signup process:
     $username = $_POST['username'];
     $email = $_POST['email'];
-    $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
+    $password = $_POST['password'];
 
+    // Example insert query (you need to sanitize and hash password properly)
+    $hashed_password = password_hash($password, PASSWORD_DEFAULT);
     $stmt = $conn->prepare("INSERT INTO users (username, email, password) VALUES (?, ?, ?)");
-    $stmt->bind_param("sss", $username, $email, $password);
+    $stmt->bind_param("sss", $username, $email, $hashed_password);
 
     if ($stmt->execute()) {
-        echo "<div class='success-message'>Signup successful! You can now <a href='login.php'>login</a>.</div>";
+        // Redirect to login page after successful signup
+        header("Location: login.php");
+        exit;
     } else {
-        echo "<div class='error-message'>Error: " . $stmt->error . "</div>";
+        // Handle signup failure
+        $error_message = "Signup failed. Please try again.";
     }
 
     $stmt->close();
@@ -34,13 +44,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     <main>
         <section class="signup-form-section">
-            <h2>Create Your Account</h2>
+            <h2>Create a New Account</h2>
+
+            <?php if (!empty($error_message)): ?>
+                <div class="error-message"><?php echo $error_message; ?></div>
+            <?php endif; ?>
+
             <form action="signup.php" method="post" class="signup-form">
                 <div class="form-group">
                     <label for="username">Username:</label>
                     <input type="text" id="username" name="username" required>
                 </div>
-                
+
                 <div class="form-group">
                     <label for="email">Email:</label>
                     <input type="email" id="email" name="email" required>
@@ -51,7 +66,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <input type="password" id="password" name="password" required>
                 </div>
                 
-                <button type="submit" class="btn">Signup</button>
+                <button type="submit" class="btn">Sign Up</button>
                 <p>Already have an account? <a href="login.php">Login here</a>.</p>
             </form>
         </section>
