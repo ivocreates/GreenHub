@@ -3,6 +3,22 @@ CREATE DATABASE IF NOT EXISTS greenhub;
 USE greenhub;
 
 -- --------------------------------------------------------
+-- Table structure for table `users`
+-- --------------------------------------------------------
+CREATE TABLE IF NOT EXISTS `users` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `username` varchar(50) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `bio` text DEFAULT NULL,
+  `profile_pic` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `username` (`username`),
+  UNIQUE KEY `email` (`email`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
 -- Table structure for table `articles`
 -- --------------------------------------------------------
 CREATE TABLE IF NOT EXISTS `articles` (
@@ -16,10 +32,10 @@ CREATE TABLE IF NOT EXISTS `articles` (
   KEY `author_id` (`author_id`),                 -- Index on `author_id` for faster lookups
   CONSTRAINT `articles_ibfk_1` FOREIGN KEY (`author_id`) REFERENCES `users` (`id`) ON DELETE SET NULL -- Foreign key constraint on `author_id`
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
 -- --------------------------------------------------------
 -- Table structure for table `community_posts`
 -- --------------------------------------------------------
-
 CREATE TABLE IF NOT EXISTS `community_posts` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `user_id` int(11) NOT NULL,
@@ -33,7 +49,6 @@ CREATE TABLE IF NOT EXISTS `community_posts` (
 -- --------------------------------------------------------
 -- Table structure for table `contact_messages`
 -- --------------------------------------------------------
-
 CREATE TABLE IF NOT EXISTS `contact_messages` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(100) NOT NULL,
@@ -46,7 +61,6 @@ CREATE TABLE IF NOT EXISTS `contact_messages` (
 -- --------------------------------------------------------
 -- Table structure for table `form_submissions`
 -- --------------------------------------------------------
-
 CREATE TABLE IF NOT EXISTS `form_submissions` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(100) NOT NULL,
@@ -59,7 +73,6 @@ CREATE TABLE IF NOT EXISTS `form_submissions` (
 -- --------------------------------------------------------
 -- Table structure for table `forum_posts`
 -- --------------------------------------------------------
-
 CREATE TABLE IF NOT EXISTS `forum_posts` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `title` varchar(255) NOT NULL,
@@ -74,7 +87,6 @@ CREATE TABLE IF NOT EXISTS `forum_posts` (
 -- --------------------------------------------------------
 -- Table structure for table `forum_replies`
 -- --------------------------------------------------------
-
 CREATE TABLE IF NOT EXISTS `forum_replies` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `post_id` int(11) DEFAULT NULL,
@@ -91,7 +103,6 @@ CREATE TABLE IF NOT EXISTS `forum_replies` (
 -- --------------------------------------------------------
 -- Table structure for table `password_resets`
 -- --------------------------------------------------------
-
 CREATE TABLE IF NOT EXISTS `password_resets` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `email` varchar(100) NOT NULL,
@@ -103,7 +114,6 @@ CREATE TABLE IF NOT EXISTS `password_resets` (
 -- --------------------------------------------------------
 -- Table structure for table `posts`
 -- --------------------------------------------------------
-
 CREATE TABLE IF NOT EXISTS `posts` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `title` varchar(255) NOT NULL,
@@ -116,7 +126,6 @@ CREATE TABLE IF NOT EXISTS `posts` (
 -- --------------------------------------------------------
 -- Table structure for table `replies`
 -- --------------------------------------------------------
-
 CREATE TABLE IF NOT EXISTS `replies` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `post_id` int(11) NOT NULL,
@@ -126,20 +135,4 @@ CREATE TABLE IF NOT EXISTS `replies` (
   PRIMARY KEY (`id`),
   KEY `post_id` (`post_id`),
   CONSTRAINT `replies_ibfk_1` FOREIGN KEY (`post_id`) REFERENCES `posts` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- --------------------------------------------------------
--- Table structure for table `users` (Created first)
--- --------------------------------------------------------
-CREATE TABLE IF NOT EXISTS `users` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `username` varchar(50) NOT NULL,
-  `email` varchar(100) NOT NULL,
-  `password` varchar(255) NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
-  `bio` text DEFAULT NULL,
-  `profile_pic` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `username` (`username`),
-  UNIQUE KEY `email` (`email`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
