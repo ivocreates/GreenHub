@@ -136,3 +136,4 @@ CREATE TABLE IF NOT EXISTS `replies` (
   KEY `post_id` (`post_id`),
   CONSTRAINT `replies_ibfk_1` FOREIGN KEY (`post_id`) REFERENCES `posts` (`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+ALTER TABLE articles ADD COLUMN image VARCHAR(255);
