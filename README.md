@@ -150,7 +150,7 @@ GreenHub/
 
 ## Social Media Links
 
-- **GitHub**: [perivo](https://github.com/perivo)
+- **GitHub**: [perivo](https://github.com/ivocreates)
 - **LinkedIn**: [Ivo Pereira](https://in.linkedin.com/in/ivo-pereira-ix3)
 - **Instagram**: [theblackcatguy](https://www.instagram.com/theblackcatguy)
 - **WhatsApp**: [+91 9403765835](https://wa.me/+91 9403765835)
